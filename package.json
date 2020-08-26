@@ -1,0 +1,30 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Node command-line application that tkes in information about employees and generates an HTML webpage that displays summaries for each person in a software engineering team. ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajdonnelly/team-profile-generator.git"
+  },
+  "keywords": [
+    "node",
+    "command-line"
+  ],
+  "author": "AJD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajdonnelly/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/ajdonnelly/team-profile-generator#readme"
+}
