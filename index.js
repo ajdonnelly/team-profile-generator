@@ -11,6 +11,13 @@ const Manager = require('./lib/Manager');
 const path = require("path");
 const fs = require("fs");
 
+const generatePage = require('./src/page-template');
+//creates dir location of new file
+const newDir = path.resolve(process.cwd(), "team-profile")
+//joins the absolute path resolved above with the new filename to make a path
+//this new path is saved as outputPath
+const htmlFile = path.join(newDir, "team-profile.html");
+
 //empty arrays to push to
 const teamArray = [];
 const idArray = [];
@@ -68,7 +75,7 @@ function newManager() {
         name: "managerOfficeNumber",
         message: "Please provide the team manager's office number",
         validate: test => {
-          const test = test.match(
+          const pass = test.match(
             /^\d*$/
           );
           if (pass) {
@@ -146,15 +153,13 @@ function newEngineer() {
             /^\d*$/
           );
           if (test) {
-            if (idArray.includes(answer)) {
+            if (idArray.includes(ID)) {
               return "ID taken. Please enter a new number above 0.";
             } else {
               return true;
             }
-
-          } else {
-          return "Please enter a positive number greater than zero.";
-          }
+          } 
+          return "Please enter a number above zero.";
         }
       },
       {
@@ -221,7 +226,7 @@ function newIntern() {
             /^\d*$/
           );
           if (test) {
-            if (idArray.includes(answer)) {
+            if (idArray.includes(ID)) {
               return "ID taken. Please enter a new number above 0.";
             } else {
               return true;
@@ -273,10 +278,13 @@ function newIntern() {
 //not sure about this code-may have to refactor
     function gatherTeam() {
         // Create the output directory if the output path doesn't exist
-        if (!fs.existsSync(OUTPUT_DIR)) {
-          fs.mkdirSync(OUTPUT_DIR)
+        if (!fs.existsSync(newDir)) {
+          fs.mkdirSync(newDir)
         }
-        fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+        //fs.writeFileSync( file, data, options )
+        //takes the path defined above takes data from the teamArray and 
+        //passes it through the page-template
+        fs.writeFileSync(htmlFile, generatePage(teamArray), "utf-8");
       }
     
   newManager();
