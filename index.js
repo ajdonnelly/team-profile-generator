@@ -254,7 +254,7 @@ function newIntern() {
       },
       {
         type: "input",
-        name: "engineerSchool",
+        name: "internSchool",
         message: "Please provide your team intern's school name",
         validate: test => {
           if (test) {
@@ -266,7 +266,7 @@ function newIntern() {
         }
       }
     ]).then(i=> {
-      const intern = new Intern(i.engineerName, i.engineerId, i.engineerEmail, i.engineerSchool);
+      const intern = new Intern(i.internName, i.internId, i.internEmail, i.internSchool);
       teamArray.push(intern);
       idArray.push(i.internId);
       assembleTeam();
