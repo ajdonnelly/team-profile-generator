@@ -5,3 +5,4 @@ Your challenge is to build a Node.js command-line application that takes in info
 Link to a walkthrough video:
 Github Link: https://github.com/ajdonnelly/team-profile-generator/edit/master/README.md
 
+![image](https://user-images.githubusercontent.com/65695895/91667036-4d084300-eac7-11ea-8571-e8a78c81d7aa.png)
